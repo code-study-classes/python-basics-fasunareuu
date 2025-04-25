@@ -11,13 +11,14 @@ from practice_package.strings import (
 
 class TestStringsFunctions:
     
+    
     @pytest.mark.parametrize("path, expected", [
-        ('C:/Users/example.txt', 'example'),
-        ('../index.html', 'index'),
-        ('/home/user/photo.jpg', 'photo'),
-        ('archive.tar.gz', 'archive') 
-    ], ids=["windows_path", "relative_path", "unix_path", 
-            "double_extension", "no_extension", "hidden_file"])
+    ('C:/Users/example.txt', 'example'),
+    ('../index.html', 'index'),
+    ('/home/user/photo.jpg', 'photo'),
+    ('archive.tar.gz', 'archive') 
+], ids=["windows_path", "relative_path", "unix_path", "double_extension"]) 
+
     def test_extract_file_name(self, path, expected):
         assert extract_file_name(path) == expected
     
